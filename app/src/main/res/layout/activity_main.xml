@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="ru.geekbrains.android3_1.MainActivity">
 
+    <TextView
+        android:id="@+id/text_lesson1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="Lesson 1" />
+
     <LinearLayout
         android:id="@+id/buttons_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_below="@id/text_lesson1"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:orientation="horizontal">
@@ -35,12 +43,20 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/lesson2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/buttons_layout"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Lesson 2" />
+
         <android.support.v7.widget.AppCompatEditText
+            android:hint="Type some text here"
             android:id="@+id/edit_text_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -52,4 +68,30 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/lesson3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lesson2"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Lesson 3" />
+
+        <Button
+            android:id="@+id/btn_open_convert_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/convert_image" />
+        <Button
+            android:id="@+id/btn_stop_convert_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/stop_convert_image" />
+    </LinearLayout>
 </RelativeLayout>

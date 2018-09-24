@@ -10,4 +10,7 @@ public interface MainView extends MvpView
     void setButtonTextOne(Integer calculate);
     void setButtonTextTwo(Integer calculate);
     void setButtonTextThree(Integer calculate);
+
+    void setTextViewText(String s);
+
 }
