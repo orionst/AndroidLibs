@@ -61,7 +61,6 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        converter = new ImageConverter(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getPath());
         RxTextView.textChanges(editText).subscribe((Action1<? super CharSequence>) charSequence -> presenter.changedText(charSequence.toString()));
 
         checkPermission();
@@ -92,6 +91,7 @@ public class MainActivity extends MvpAppCompatActivity implements MainView {
 
     @ProvidePresenter
     public MainPresenter provideMainPresenter() {
+        converter = new ImageConverter(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES).getPath());
         presenter = new MainPresenter(AndroidSchedulers.mainThread(), converter);
         //TO SOMETHING WITH PRESENTER
         return presenter;
